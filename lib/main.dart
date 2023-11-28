@@ -1,6 +1,6 @@
 // main.dart
 
-import 'package:demo_shopping_riverpod/views/routes/app_routes.dart';
+import 'package:demo_shopping_riverpod/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

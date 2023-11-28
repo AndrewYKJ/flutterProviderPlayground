@@ -1,8 +1,8 @@
+import 'package:demo_shopping_riverpod/views/cart_page.dart';
 import 'package:flutter/material.dart';
 
-import '../cart_page.dart';
-import '../fav_page.dart';
-import '../product_list.dart';
+import '../views/fav_page.dart';
+import '../views/product/product_list.dart';
 
 class AppRoutes {
   static const String productList = "productList";

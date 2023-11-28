@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:badges/badges.dart' as badge;
 import 'package:demo_shopping_riverpod/controller/voucher_controller.dart';
 
-import 'package:demo_shopping_riverpod/views/routes/app_routes.dart';
+import 'package:demo_shopping_riverpod/routes/app_routes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../models/product_model.dart';
-import '../providers/providers.dart';
+import '../../models/product_model.dart';
+import '../../providers/providers.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({super.key});
