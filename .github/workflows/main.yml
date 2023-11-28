@@ -22,16 +22,16 @@ jobs:
         with:
           flutter-version: '3.0.0'
           channel: 'stable'
-      - name: Get dependencies
+     
       - run: flutter pub get
       - run: flutter test
-      - name: Start release build
+ 
       - run: flutter build apk --debug 
-      - name: Upload Android Debug
-        uses: actions/upload-artifact@v2
-        with:
-          name: android-release
-          path: build/app/outputs/bundle/release/app-release.apk
+      # - name: Upload Android Debug
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: android-release
+      #     path: build/app/outputs/bundle/release/app-release.apk
         # uses: andrew/release-action@v3
         # with:
         #   artifacts: "build/app/outputs/apk/debug/*"
