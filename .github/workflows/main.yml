@@ -68,10 +68,10 @@ jobs:
         channel: ${{env.FLUTTER_CHANNEL}}
         flutter-version: ${{env.FLUTTER_VERSION}}
     - name: Set up Dart
-        uses: dart-lang/setup-dart@v1
-        with:
-          channel: stable
-          version: '3.0.5'    
+      uses: dart-lang/setup-dart@v1
+      with:
+        channel: stable
+        version: '3.0.5'    
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk
