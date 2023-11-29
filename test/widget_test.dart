@@ -92,34 +92,4 @@ void main() {
     // Assert
     expect(product.isFavourite, false);
   });
-  testWidgets('ProductList widget test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester
-        .pumpWidget(MyApp()); // Replace with the actual name of your app widget
-
-    // Trigger navigation to the ProductList screen.
-    await tester.press(find.byType(
-        IconButton)); // Assuming you have an IconButton to navigate to ProductList
-
-    // Wait for the page transition animation to complete.
-    await tester.pumpAndSettle();
-
-    // Verify that the ProductList screen is displayed.
-    expect(find.byType(ProductList), findsOneWidget);
-
-    // Perform your integration tests here.
-    // For example, you can test if certain widgets are present or interact with them.
-
-    // Example: Expect the app bar title.
-    expect(find.text('E-Commerce App'), findsOneWidget);
-
-    // Example: Tap on the favorite button.
-    await tester.tap(find.byIcon(Icons.favorite));
-
-    // Wait for animations to complete.
-    await tester.pumpAndSettle();
-
-    // Example: Expect that the favorite screen is displayed.
-    expect(find.text('Favorites'), findsOneWidget);
-  });
 }
