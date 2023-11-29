@@ -71,7 +71,8 @@ jobs:
       uses: dart-lang/setup-dart@v1
       with:
         channel: stable
-        version: '3.0.5'    
+        version: '3.0.5'  
+    - run: flutter upgrade
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk
