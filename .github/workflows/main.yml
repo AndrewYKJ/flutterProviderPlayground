@@ -47,10 +47,11 @@
 # # pull request on main master
 
 on:
- push:
+  push:
+    branches:
+      - main
     tags:
       - '*'
-
 name: Test, Build and Release apk
 
 env:
