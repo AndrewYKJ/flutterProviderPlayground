@@ -46,8 +46,13 @@
 # # push to master, main, develop
 # # pull request on main master
 
-on: push
+on:
+ push:
+    tags:
+      - '*'
+
 name: Test, Build and Release apk
+
 env:
   JAVA_VERSION: "17.x"
   FLUTTER_VERSION: "3.0.5"
@@ -72,7 +77,9 @@ jobs:
       with:
         channel: stable
         version: '3.0.5'  
+    - run: flutter doctor -v
     - run: flutter upgrade
+    - run: flutter doctor -v
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk
