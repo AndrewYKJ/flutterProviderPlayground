@@ -52,6 +52,7 @@ on:
       - main
     tags:
       - '*'
+
 name: Test, Build and Release apk
 
 env:
@@ -59,32 +60,39 @@ env:
   FLUTTER_VERSION: "3.0.5"
   FLUTTER_CHANNEL: "stable"
 
-
 jobs:
   build:
     name: Build APK
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup JAVA
-    - uses: actions/setup-java@v1
-      with:
-        java-version: ${{env.JAVA_VERSION}}
-    - name: Setup Flutter        
-    - uses: subosito/flutter-action@v1
-      with:
-        channel: ${{env.FLUTTER_CHANNEL}}
-        flutter-version: ${{env.FLUTTER_VERSION}}
-    - name: Upgrade Flutter
-    - run: flutter upgrade
-    - name: Install Flutter dependencies
-    - run: flutter pub get
-    - name: Flutter Test
-    - run: flutter test
-    - name: Flutter Build APK
-    - run: flutter build apk
-    - name: Push APK to Releases
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "build/app/outputs/flutter-apk/*.apk"
-        token: ${{ secrets.TOKEN }}
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup JAVA
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{env.JAVA_VERSION}}
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: ${{env.FLUTTER_CHANNEL}}
+          flutter-version: ${{env.FLUTTER_VERSION}}
+
+      - name: Upgrade Flutter
+        run: flutter upgrade
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Flutter Test
+        run: flutter test
+
+      - name: Flutter Build APK
+        run: flutter build apk
+
+      - name: Push APK to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/flutter-apk/*.apk"
+          token: ${{ secrets.TOKEN }}
