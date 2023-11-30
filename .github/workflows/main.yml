@@ -91,11 +91,11 @@ jobs:
       - name: Flutter Build APK
         run: flutter build apk
 
-      - name: Push APK to Release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/app/outputs/flutter-apk/*.apk"
-          token: ${{ secrets.TOKEN }}
+      # - name: Push APK to Release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "build/app/outputs/flutter-apk/*.apk"
+      #     token: ${{ secrets.TOKEN }}
 
       - name: Push APK to APPCENTER
         uses: wzieba/AppCenter-Github-Action@v1
