@@ -102,7 +102,7 @@ jobs:
         with:
           appName: AgmoSierra/test-AppCircle
           token:  ${{ secrets.APP_CENTER_TOKEN }}
-          group: Testers
+          group: Collaborators
           file: "build/app/outputs/flutter-apk/app-release.apk"
           notifyTesters: false
           debug: false
