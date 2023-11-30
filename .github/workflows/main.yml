@@ -91,8 +91,19 @@ jobs:
       - name: Flutter Build APK
         run: flutter build apk
 
-      - name: Push APK to Releases
+      - name: Push APK to Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/flutter-apk/*.apk"
           token: ${{ secrets.TOKEN }}
+
+      - name: Push APK to APPCENTER
+        uses: wzieba/AppCenter-Github-Action@v1
+        with:
+          appName: AgmoSierra/test-AppCircle
+          token:  ${{ secrets.APP_CENTER_TOKEN }}
+          group: Testers
+          file:  "build/app/outputs/flutter-apk/*.apk"
+          notifyTesters: false
+          debug: false
+          releaseNotes: "Test GitHub Action CI/CD"
